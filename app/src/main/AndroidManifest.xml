@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FilmingApp">
         <activity
+            android:name=".Detalles"
+            android:exported="false" />
+        <activity
             android:name=".Caratula"
             android:exported="false" />
         <activity

@@ -13,12 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import es.studium.filmingapp.Caratula;
+import es.studium.filmingapp.Detalles;
 import es.studium.filmingapp.Pelicula;
 import es.studium.filmingapp.PeliculaAdapter;
 import es.studium.filmingapp.R;
@@ -52,9 +54,16 @@ public class PeliculaFragment extends Fragment {
 
         PeliculaAdapter peliculaAdapter = new PeliculaAdapter(items, getContext(), new RecyclerViewOnItemClickListener() {
             @Override
-            public void onClick(View view, int position) {
-                int idPelicula = items.get(position).getImagen();
-                enviar(idPelicula);
+            public void onClick(View view, int position,int id) {
+
+                if(id==R.id.imagenPelicula) {
+                    int idPelicula = items.get(position).getImagen();
+                    enviarCaratula(idPelicula);
+                }
+                else{
+                    String idPelicula = items.get(position).getNombre();
+                    enviarDetalles(idPelicula);
+                }
             }
         });
         RecyclerView recyclerView = Vista.findViewById(R.id.myRecycleViewPeliculas);
@@ -65,9 +74,18 @@ public class PeliculaFragment extends Fragment {
 
 }
 
-    private void enviar(int Codigo) {
+    private void enviarCaratula(int Codigo) {
 
         Intent intent =new Intent(getContext(),Caratula.class);
+        intent.putExtra("position",Codigo);
+        startActivity(intent);
+
+
+    }
+
+    private void enviarDetalles(String Codigo) {
+
+        Intent intent =new Intent(getContext(), Detalles.class);
         intent.putExtra("position",Codigo);
         startActivity(intent);
 

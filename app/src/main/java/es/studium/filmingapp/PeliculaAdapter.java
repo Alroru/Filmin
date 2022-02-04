@@ -39,6 +39,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.Pelicu
     @Override
     public void onBindViewHolder(final PeliculaAdapter.PeliculaViewHolder holder,final int position) {
         holder.Datos(items.get(position));
+
     }
 
 
@@ -59,10 +60,16 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.Pelicu
         {
             imagenPelicula.setImageResource(item.getImagen());
             nombrePelicula.setText(item.getNombre());
-            itemView.setOnClickListener(new View.OnClickListener() {
+            imagenPelicula.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    recyclerViewOnItemClickListener.onClick(itemView,getAdapterPosition());
+                    recyclerViewOnItemClickListener.onClick(imagenPelicula,getAdapterPosition(),imagenPelicula.getId());
+                }
+            });
+            nombrePelicula.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    recyclerViewOnItemClickListener.onClick(nombrePelicula,getAdapterPosition(),nombrePelicula.getId());
                 }
             });
         }

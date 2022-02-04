@@ -53,7 +53,7 @@ public class SeriesFragment extends Fragment {
 
         SerieAdapter SerieAdapter = new SerieAdapter(items, getContext(), new RecyclerViewOnItemClickListener() {
             @Override
-            public void onClick(View view, int position) {
+            public void onClick(View view, int position,int id) {
                 int idSerie = items.get(position).getImagen();
                 enviar(idSerie);
             }

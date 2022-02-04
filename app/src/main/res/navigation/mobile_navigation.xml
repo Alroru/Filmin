@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_peliculas_to_caratula"
             app:destination="@id/caratula" />
+        <action
+            android:id="@+id/action_nav_peliculas_to_detalles"
+            app:destination="@id/detalles" />
     </fragment>
     <fragment
         android:id="@+id/nav_series"
@@ -22,6 +25,9 @@
         <action
             android:id="@+id/action_nav_series_to_caratula"
             app:destination="@id/caratula" />
+        <action
+            android:id="@+id/action_nav_series_to_detalles"
+            app:destination="@id/detalles" />
     </fragment>
     <fragment
         android:id="@+id/nav_inicio"
@@ -33,4 +39,9 @@
         android:name="es.studium.filmingapp.Caratula"
         android:label="activity_caratula"
         tools:layout="@layout/activity_caratula" />
+    <activity
+        android:id="@+id/detalles"
+        android:name="es.studium.filmingapp.Detalles"
+        android:label="activity_detalles"
+        tools:layout="@layout/activity_detalles" />
 </navigation>

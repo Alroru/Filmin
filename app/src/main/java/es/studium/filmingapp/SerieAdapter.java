@@ -59,12 +59,7 @@ public class SerieAdapter extends RecyclerView.Adapter<SerieAdapter.SerieViewHol
         {
             imagenSerie.setImageResource(item.getImagen());
             nombreSerie.setText(item.getNombre());
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    recyclerViewOnItemClickListener.onClick(itemView,getAdapterPosition());
-                }
-            });
+
         }
     }
 }
