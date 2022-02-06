@@ -57,15 +57,16 @@ public class PeliculaFragment extends Fragment {
                     int idPelicula = items.get(position).getImagen();
                     enviarCaratula(idPelicula);
                 }
-                else{
+                else {
                     String nombrePelicula = items.get(position).getNombre();
-                    String directorPelicula=items.get(position).getDirector();
-                    String actorPelicula=items.get(position).getActor();
-                    String sinopsisPelicula=items.get(position).getSinopsis();
-                    int puntuacionPelicula=items.get(position).getPuntuacion();
+                    String directorPelicula = items.get(position).getDirector();
+                    String actorPelicula = items.get(position).getActor();
+                    String sinopsisPelicula = items.get(position).getSinopsis();
+                    int puntuacionPelicula = items.get(position).getPuntuacion();
 
 
-                    enviarDetalles(nombrePelicula,directorPelicula,actorPelicula,sinopsisPelicula,puntuacionPelicula);
+
+                    enviarDetalles(nombrePelicula, directorPelicula, actorPelicula, sinopsisPelicula, puntuacionPelicula);
                 }
             }
         });

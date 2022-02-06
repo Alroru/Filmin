@@ -13,6 +13,7 @@ public class Detalles extends AppCompatActivity {
     TextView sinopsis;
     RatingBar puntuacion;
     TextView tituloTemporadas;
+    TextView temporadas;
 
 
 
@@ -20,12 +21,12 @@ public class Detalles extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles);
-
         nombre=findViewById(R.id.textViewNombre);
         director=findViewById(R.id.textViewDirector);
         actor=findViewById(R.id.textViewActor);
         sinopsis=findViewById(R.id.textViewSinopsis);
         puntuacion=findViewById(R.id.ratingBar);
+        temporadas=findViewById(R.id.textViewTemporadas);
         tituloTemporadas=findViewById(R.id.textViewTituloTemporadas);
         Bundle extras=getIntent().getExtras();
         String nombre1=extras.getString("nombre");
@@ -34,11 +35,13 @@ public class Detalles extends AppCompatActivity {
         String sinopsis1=extras.getString("sinopsis");
         int rating=extras.getInt("puntuacion");
         boolean invisible1=extras.getBoolean("etiqueta");
+        String temporadas1=extras.getString("temporadas");
         nombre.setText(nombre1);
         director.setText(director1);
         actor.setText(actor1);
         sinopsis.setText(sinopsis1);
         puntuacion.setRating(rating);
+        temporadas.setText(temporadas1);
         tituloTemporadas.setEnabled(invisible1);
 
     }
